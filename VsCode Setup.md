@@ -40,13 +40,28 @@ To get familiar with VSCode for C++ you can follow the tutorial [here](https://c
 
 In general to setup a new work space for C++ these are the steps that you will want to follow.
 
-1. Connect to cs1.seattleu.edu by running ```ssh <yourusername>@cs1.seattleu.edu``` (note: by default this lands you in your student home directory).
+### Create a new folder for the class:
+
+1. Connect to cs1.seattleu.edu by running ```ssh <yourusername>@cs1.seattleu.edu``` from PowerShell (PC) or from Terminal(Mac)(note: by default this lands you in your student home directory).
 2. Create a new folder for the class ```mkdir cpsc5041```
 3. Execute ```exit``` to log out of your SSH session
-4. Open a new VSCode Window ```Ctrl+Shift+N```
-5. Open the command pallette ```Ctrl+Shift+P``` and search for "Remote-SSH: Connect to Host..." and press ```Enter```
-6. Either select your existing ssh connection definition for cs1 or type yourusername@cs1.seattleu.edu and press enter
-7. Enter your password
+
+### Setup a new VSCode Workspace in That Folder
+
+1. Open a new VSCode Window ```Ctrl+Shift+N```
+2. Open the command pallette ```Ctrl+Shift+P``` and search for "Remote-SSH: Connect to Host..." and press ```Enter```
+3. Either select your existing ssh connection definition for cs1 or type yourusername@cs1.seattleu.edu and press enter
+4. Enter your password
+5. Select the the top charm on the left toolbar in VSCode (this is the file charm) and click "Open Folder"
+6. Select the folder you created in step 2, this will re-launch VSCode in that folder
+7. Install the C++ for Visual Studio Code extension [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+### TODO: Setup Your Build Tasks
+
+To do these steps we will need a sample program.  Open the Explorer View
+
+### TODO: Setup Your Debug Tasks
+
 
 TODO: Finish adding these steps...
 
