@@ -40,7 +40,7 @@ To get familiar with VSCode for C++ you can follow the tutorial [here](https://c
 
 In general to setup a new work space for C++ these are the steps that you will want to follow.
 
-### Create a new folder for the class:
+### Create a new folder for the class
 
 1. Connect to cs1.seattleu.edu by running ```ssh <yourusername>@cs1.seattleu.edu``` from PowerShell (PC) or from Terminal(Mac)(note: by default this lands you in your student home directory).
 2. Create a new folder for the class ```mkdir cpsc5041```
@@ -53,16 +53,101 @@ In general to setup a new work space for C++ these are the steps that you will w
 3. Either select your existing ssh connection definition for cs1 or type yourusername@cs1.seattleu.edu and press enter
 4. Enter your password
 5. Select the the top charm on the left toolbar in VSCode (this is the file charm) and click "Open Folder"
-6. Select the folder you created in step 2, this will re-launch VSCode in that folder
-7. Install the C++ for Visual Studio Code extension [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+6. Select the folder you created in step 2, this will re-launch VSCode in that folder.
 
-### TODO: Setup Your Build Tasks
+### Configuring C++ Build and Debug Tasks to Align with CS1
 
-To do these steps we will need a sample program.  Open the Explorer View
+By default VSCode will start to suggest configurations as you code.  To ensure that we have the righ configuration for C++ submissions on CS1 you can follow these steps:
 
-### TODO: Setup Your Debug Tasks
+1. Install the C++ for Visual Studio Code extension [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+2. In the terminal run ```mkdir .vscode```
+3. Then create the following three files in that directory with the associated content:
 
+#### c_cpp_properties.json
 
-TODO: Finish adding these steps...
+```json
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/opt/rh/devtoolset-8/root/bin//gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        }
+    ],
+    "version": 4
+}
+```
 
-## TODO: Developing in Python with VSCode
+#### launch.json
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "g++ build active file",
+            "miDebuggerPath": "/opt/rh/devtoolset-8/root/bin/gdb"
+        }
+    ]
+}
+```
+
+#### tasks.json
+
+```json
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "/opt/rh/devtoolset-8/root/bin//g++",
+            "args": [
+                "-ansi",
+                "-pedantic",
+                "-Wall",
+                "-Werror",
+                "-std=c++11",
+                "-g",
+                "${fileDirname}/**.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/opt/rh/devtoolset-8/root/bin/"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
+```
+
+Once these are created you can build the file you are currently working with byt pressing ```Ctrl+Shift+B```. It will effectively run g++ yourfile.cpp with all of the relevant cs1 flags.  Additionally you will be able to enter a debug session by pressing ```F5```.
