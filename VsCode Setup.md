@@ -10,7 +10,7 @@ The goal of this document is to help other people in the program understand how 
 2. Install VSCode [here](https://code.visualstudio.com/)
 3. Install the Remote Development Extension Pack [here](https://aka.ms/vscode-remote/download/extension)
 
-### MAC Users (Untested but I think this works)
+### MAC Users
 
 1. Install VSCode [here](https://code.visualstudio.com/)
 2. Install the Remote Development Extension Pack [here](https://aka.ms/vscode-remote/download/extension)
