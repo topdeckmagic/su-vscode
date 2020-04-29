@@ -17,16 +17,16 @@ The goal of this document is to help other people in the program understand how 
 
 ## Connecting to CS1
 
-To enable the easiest integration you will actually have your terminal in VSCode directly connectedt to CS1, this means that you are storing your files, building and debugging based on the configuration of CS1.
+To enable the easiest integration you will actually have your terminal in VSCode directly connected to CS1, this means that you are storing your files, building and debugging based on the configuration of CS1.
 
-1. Open the command pallete in VSCode (press F1 or ctrl + shift + p)
+1. Open the command pallette in VSCode (press F1 or ctrl + shift + p)
 2. Type ""Remote-SSH: Connect to Host..." and press enter.
 3. Enter the host information, this will be yourusername@cs1.seattleu.edu
 4. You will be prompted for a password, provide your school password and press enter
 
 At this point your terminal will be connected to cs1 and you can issues normal cs1 commands from within the VSCode terminal.  Additionally for PC users this means no more Putty and WinSCP, you can now SSH directly from a Power Shell window.
 
-Note: To avoide having to do this again it's a good idea to save your workspace (File -> Save Workspace As...), in VSCode a workspace is a set of configurations for the IDE that you can quickly relaunch.
+Note: To avoid having to do this again it's a good idea to save your workspace (File -> Save Workspace As...), in VSCode a workspace is a set of configurations for the IDE that you can quickly relaunch.
 
 ## Ensuring CS1 has the correct G++ settings for your profile
 
@@ -57,7 +57,7 @@ In general to setup a new work space for C++ these are the steps that you will w
 
 ### Configuring C++ Build and Debug Tasks to Align with CS1
 
-By default VSCode will start to suggest configurations as you code.  To ensure that we have the righ configuration for C++ submissions on CS1 you can follow these steps:
+By default VSCode will start to suggest configurations as you code.  To ensure that we have the right configuration for C++ submissions on CS1 you can follow these steps:
 
 1. Install the C++ for Visual Studio Code extension [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 2. In the terminal run ```mkdir .vscode```
