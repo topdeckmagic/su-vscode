@@ -60,4 +60,3 @@ Next we need to add CS1 as a remote system for Visual Studio Enterprise.
  3. SSH Into CS1 by typing ssh <username>@cs1.seattleu.edu into the Terminal
  4. Navigate to the project (ie cd cs5042/ServerClientHelloWorld/Server/bin/x64/Debug)
  5. Run "./Server.out"
- 6. 
